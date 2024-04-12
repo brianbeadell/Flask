@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}General Projects{% endblock %}
+
+{% block content %}
+      <div class="container mt-5">
+          <h1>My Projects</h1>
+          <div class="row">
+            <!-- Project 1: Mushroom Classifier -->
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="static/images/COW.png" class="card-img-top" alt="KNN Functions">
+                      <div class="card-body">
+                        <h5 class="card-title">Mushroom Classifier</h5>
+                        <p class="card-text">In my analysis, I aimed to predict whether mushrooms are edible or poisonous based on their features.</p>
+                        <a href="https://github.com/brianbeadell/Exploring-Tree-Based-Regression-Methods-for-3D-Sinusoidal-Data" class="btn btn-primary">View on GitHub</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- Project 2: Exploring Tree-Based Regression Methods for 3D Sinusoidal Data -->
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="static/images/3DSinusoidal.png" class="card-img-top" alt="Tree-Based Regression">
+                      <div class="card-body">
+                          <h5 class="card-title">Exploring Tree-Based Regression Methods for 3D Sinusoidal Data</h5>
+                          <p class="card-text">Using tree-based methods to solve regression problems. Training Gradient-Boosted Regression Tree, Random Forest, and Decision Tree
+                            to a noisy 3D sinusoidal data set.</p>
+                          <a href="https://github.com/brianbeadell/Exploring-Tree-Based-Regression-Methods-for-3D-Sinusoidal-Data" class="btn btn-primary">View on GitHub</a>                        <!-- <a href="https://nbviewer.jupyter.org/github/brianbeadell/Exploring-Tree-Based-Regression-Methods-for-2D-Linear/blob/main/your_notebook_name.ipynb" class="btn btn-secondary">View Notebook</a> -->
+                      </div>
+                  </div>
+              </div>
+              <!-- Project 3: Exploring 3D Sinusoidal Data using Artificial Neural Networks  -->
+              <div class="col-md-4">
+                  <div class="card">
+                        <img src="static/images/ANN.png" class="card-img-top" alt="Artificial Neural Networks">
+                        <div class="card-body">
+                          <h5 class="card-title">Exploring 3D Sinusoidal Data using Artificial Neural Networks</h5>
+                          <p class="card-text">Utilizing artificial neural networks on a noisy 3D sinusoidal data set.</p>
+                          <a href="https://github.com/brianbeadell/Exploring-Tree-Based-Regression-Methods-for-3D-Sinusoidal-Data" class="btn btn-primary">View on GitHub</a>
+                        </div>
+                  </div>
+              </div>
+              <!-- Project 4: Exploring Tree-Based Regression Methods for 2D Linear -->
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="static/images/2DSinusoidal.png" class="card-img-top" alt="Tree-Based Regression">
+                      <div class="card-body">
+                          <h5 class="card-title">Exploring Tree-Based Regression Methods for 2D Linear</h5>
+                          <p class="card-text">Using tree-based methods to solve regression problems. Training Gradient-Boosted Regression Tree, Random Forest, and Decision Tree
+                            to a noisy 2D sinusoidal data set.</p>
+                          <a href="https://github.com/brianbeadell/Exploring-Tree-Based-Regression-Methods-for-2D-Linear" class="btn btn-primary">View on GitHub</a>
+                      </div>
+                  </div>
+              </div>
+              <!-- Future projects =) -->
+          </div>
+      </div>
+      <a href="/" class="btn btn-primary mt-3">Back to Home</a>
+{% endblock %}

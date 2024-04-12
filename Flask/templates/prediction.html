@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+    <h1>Prediction Result</h1>
+    <div class="result-section">
+        <h2>Uploaded Image:</h2>
+        <!-- Image path -->
+        <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 500px; height: auto;">
+
+        <h2>Prediction:</h2>
+        <p>The model predicts the leaf condition as: <strong>{{ prediction }}</strong></p>
+
+        <!-- Link to allow users to try another prediction -->
+        <a href="/apple_disease_identifier" class="btn btn-primary">Upload another image</a>
+    </div>
+{% endblock %}

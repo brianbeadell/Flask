@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+{% block title %}Capstone Project{% endblock %}
+
+{% block content %}
+    <title>Capstone Project</title>
+    <style>
+        /* Dropdown and content styles */
+        .bold-and-big {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* New button styles */
+        .dropdown-button {
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Top and bottom padding, left and right padding */
+            border: none; /* No border */
+            cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+            border-radius: 5px; /* Rounded corners */
+            text-align: center; /* Center text */
+        }
+
+        .dropdown-button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Capstone Project</h1>
+
+    <a href="/">Back to Home</a>
+
+    <div class="dropdown">
+        <button class="dropdown-button">Capstone Menu</button>
+        <div class="dropdown-content">
+            <a href="/apple_disease_identifier" target="_blank">Apple Disease Identifier</a>
+            <a href="https://github.com/brianbeadell/Apple-Disease-Identifier/blob/main/Data%20Exploration.ipynb" target="_blank">Data exploration</a>
+            <a href="https://github.com/brianbeadell/Apple-Disease-Identifier/blob/main/train_and_evaluate_model.ipynb" target="_blank">Training and Evaluation</a>
+            <a href="{{ url_for('static', filename='files/Capstone PowerPoint.pdf') }}" target="_blank">Power Point</a>
+            <a href="/resources_and_references" target="_blank">Resources and Refrences</a>
+        </div>
+    <p></p>
+    </div>
+      <p class="bold-and-big">Welcome to the showcase of my Capstone Project!</p>
+      <p></p>
+      I'm Brian Beadell, diving deep into the realm of Data Science to harness its potential for impactful applications in agriculture.
+      My project, the "Apple Disease Identifier," is a testament to this journey. It leverages advanced machine learning techniques to
+      differentiate among three common apple diseases—scab, black rot, and cedar apple rust—as well as to recognize healthy apple leaves.
+      <p></p>
+      The "Capstone Menu" dropdown provides a portal to the various segments of my project, from the conceptual framework and development
+      process to the final implementation and insights gained. Each selection is designed to offer a detailed perspective on the challenges
+      tackled, the solutions devised, and the potential impact of this project on agricultural practices.
+      <p></p>
+      <p class="bold-and-big">Project Overview</p>
+      <p></p>
+      In this project, I developed a deep learning model for the classification of images of apples using PyTorch. The objective was to create
+      a robust and accurate classifier capable of distinguishing between different types of apples based on their visual features.
+      The project was divided into several key steps:
+      <p></p>
+      Data Exploration: In my initial data exploration, I examined the distribution of images across different apple diseases.
+      I visualized the class distribution through histograms, revealing any imbalances that might affect model training.
+      Additionally, I inspected sample images from each class to understand the visual characteristics and variations within the data.
+
+      Dataset Collection and Preparation: I found a dataset of multiple fruit cultivar leaf images on Kaggle, which served as the foundation for my project.
+      However, due to its large size, I had to narrow down the dataset to just apples and reduce the image volume in each folder
+      in order to make it more manageable for training purposes. Organizing the images
+      into separate folders based on their respective classes, I utilized PyTorch's ImageFolder class for easy preprocessing.
+      The images were resized, converted into tensors, and normalized to ensure compatibility with the selected neural network architecture.
+      <p></p>
+      Model Selection and Customization: For the neural network architecture, I chose to utilize a pre-trained EfficientNet model (efficientnet-b0).
+      I adapted the model by replacing its final fully connected layer to output predictions for the specific classes of apples in my dataset.
+      <p></p>
+      Training and Evaluation: The model was trained over multiple epochs using a training dataset, with the goal of minimizing the training
+      loss and improving its accuracy. I employed the Adam optimizer and Cross Entropy Loss function for optimization and evaluation, respectively.
+      The model's performance was evaluated on a separate validation dataset, measuring metrics such as validation loss and accuracy to assess its generalization capability.
+      <p></p>
+      <p class="bold-and-big">Hyperparameter Tuning and Rationalization</p>
+      <p></p>
+      Throughout the development of the image classification model, various hyperparameters were considered and experimented with to optimize
+      the model's performance. These hyperparameters included the learning rate, batch size, and number of training epochs. Although different
+      combinations of hyperparameters were tested, ultimately, specific choices were made based on their effectiveness and efficiency in achieving satisfactory results.
+      <p></p>
+      Learning Rate: Initially, different learning rates were tested to determine the optimal value for training the model. Higher learning rates
+      tended to result in faster convergence but risked overshooting the optimal parameters, leading to instability in training. Conversely, lower
+      learning rates required more epochs to converge but often yielded more stable and consistent results. After experimentation, a learning rate of 0.001
+      was chosen as it struck a balance between convergence speed and stability, allowing for efficient training while minimizing the risk of divergence.
+      <p></p>
+      Batch Size: The choice of batch size significantly influenced the training dynamics and memory usage during model training. Larger batch sizes
+      accelerated training by processing more samples in parallel but increased memory requirements and computational overhead. Conversely, smaller
+      batch sizes reduced memory usage but often led to slower convergence due to increased parameter updates and noise in gradient estimation.
+      After careful consideration, a batch size of 32 was selected as it provided a good balance between training speed and memory efficiency,
+      enabling effective training without overwhelming computational resources.
+      <p></p>
+      Number of Epochs: Determining the appropriate number of training epochs was crucial to ensure optimal model performance without overfitting or
+      underfitting the data. Initially, a range of epoch values was explored to observe the model's learning curve and convergence behavior. While
+      increasing the number of epochs generally improved performance on the training set, it risked overfitting the model to the training data,
+      leading to poor generalization on unseen data. Conversely, insufficient epochs resulted in underfitting, limiting the model's capacity to
+      capture complex patterns in the data. After experimentation, a conservative choice of 2 epochs was made to strike a balance between training
+      efficiency and model generalization. This decision was informed by observing diminishing returns in performance gains beyond this threshold and prioritizing computational efficiency in model training.
+      <p></p>
+      <p class="bold-and-big">Model Training and Evaluation Results</p>
+      <p></p>
+      The training of the deep learning model for image classification yielded promising results over two epochs. In the first epoch,
+      the training loss decreased to 0.3089, indicating that the model effectively learned from the training data. Concurrently,
+      the validation loss was recorded at 0.3782, with a validation accuracy of 92.83%. This initial validation accuracy suggests
+      that the model's performance generalized well to unseen data during the first epoch. Moving to the second epoch, the training
+      loss further decreased to 0.0718, indicating continued improvement in the model's performance on the training data. However,
+      the validation loss slightly increased to 0.5858, while the validation accuracy remained high at 93.17%. Despite the increase
+      in validation loss, the model maintained a high level of accuracy on the validation set, suggesting robustness in its ability
+      to classify apple images accurately. Overall, the results demonstrate that the model effectively learned the underlying patterns
+      in the training data, as evidenced by the decreasing training loss across epochs. Additionally, the consistently high validation
+      accuracy indicates that the model generalizes well to unseen data, highlighting its reliability in real-world applications.
+      Further analysis and fine-tuning may be necessary to optimize the model's performance further, but these initial results provide
+      a solid foundation for future development and deployment.
+      </p>
+    </div>
+{% endblock %}

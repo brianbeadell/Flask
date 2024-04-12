@@ -1,0 +1,36 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('../images/Background.webp');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background-color: #004d99;
+    overflow: hidden;
+    position: relative;
+    z-index: 1050;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar .dropdown-menu {
+    z-index: 1050; /* Putting dropdown on top--I had a lot of trouble with this so I dropped the bachground picture*/
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
